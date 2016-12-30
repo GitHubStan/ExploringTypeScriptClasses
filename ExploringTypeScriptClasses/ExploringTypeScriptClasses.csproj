@@ -23,12 +23,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="Calculator\calculator.html" />
     <Content Include="index.html" />
     <Content Include="index.js" />
+    <Content Include="Calculator\styles.css" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Calculator\calculator.ts" />
     <TypeScriptCompile Include="car.ts" />
   </ItemGroup>
   <ItemGroup>
