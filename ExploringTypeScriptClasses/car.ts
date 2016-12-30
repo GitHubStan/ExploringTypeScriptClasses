@@ -22,10 +22,3 @@ class Car {
         alert(`Car engine started ${this._engine.engineType}`);
     }
 }
-
-window.onload = function() {
-    var engine = new Engine(300, 'V8');
-    var car = new Car(engine);
-    alert(`Loaded the app with a car with engine ${car.engine.engineType}. Starting car.`);
-    car.start();
-}

@@ -5,7 +5,7 @@
 
     constructor(element: HTMLElement) {
         this.element = element;
-        this.element.innerHTML += "The time is: ";
+        this.element.innerHTML += "The time is now: ";
         this.span = document.createElement('span');
         this.element.appendChild(this.span);
         this.span.innerText = new Date().toUTCString();
@@ -20,9 +20,3 @@
     }
 
 }
-
-window.onload = () => {
-    var el = document.getElementById('content');
-    var greeter = new Greeter(el);
-    greeter.start();
-};
