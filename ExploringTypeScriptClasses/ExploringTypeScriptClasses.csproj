@@ -22,6 +22,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalculatorJquery\calculatorJquery.html" />
+    <Content Include="CalculatorJquery\styles.css" />
     <Content Include="Car\styles.css" />
     <Content Include="Calculator\calculator.html" />
     <Content Include="Car\Car.html" />
@@ -30,6 +32,8 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="CalculatorJquery\calculatorJquery.ts" />
+    <TypeScriptCompile Include="CalculatorJquery\jquery.d.ts" />
     <TypeScriptCompile Include="Car\greeter.ts" />
     <TypeScriptCompile Include="Calculator\calculator.ts" />
     <TypeScriptCompile Include="Car\car.ts" />
