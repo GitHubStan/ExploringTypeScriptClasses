@@ -27,8 +27,13 @@
     <Content Include="Car\styles.css" />
     <Content Include="Calculator\calculator.html" />
     <Content Include="Car\Car.html" />
-    <Content Include="Car\onload.js" />
     <Content Include="Calculator\styles.css" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -37,8 +42,12 @@
     <TypeScriptCompile Include="Car\greeter.ts" />
     <TypeScriptCompile Include="Calculator\calculator.ts" />
     <TypeScriptCompile Include="Car\car.ts" />
+    <TypeScriptCompile Include="Car\onload.ts" />
+    <TypeScriptCompile Include="Car\test.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -62,7 +71,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61496</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61496/</IISUrl>
+          <IISUrl>http://localhost:61497/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
