@@ -4,11 +4,16 @@
 }
 
 interface IAutoOptions {
-    engine: IEngine;
-    basePrice: number;
+    year: string;
     make: string;
     model: string;
-    year: string;
+    engine: IEngine;
+    basePrice: number;
+}
+
+interface ITruckOptions extends IAutoOptions {
+    bedLength: string;
+    fourByFour: boolean;   
 }
 
 class Engine implements IEngine {
@@ -55,12 +60,12 @@ class Auto implements IAutoOptions {
     accessoryList: string;
     year: string;
 
-    constructor(basePrice: number, engine: IEngine, make: string, model: string, year: string) {
-        this.basePrice = basePrice;
-        this.engine = engine;
-        this.make = make;
-        this.model = model;
-        this.year = year;
+    constructor(autoOptions: IAutoOptions) {
+        this.year = autoOptions.year;
+        this.make = autoOptions.make;
+        this.model = autoOptions.model;
+        this.engine = autoOptions.engine;
+        this.basePrice = autoOptions.basePrice;
     }
 
     calculateTotal(): number {
@@ -100,15 +105,8 @@ class Auto implements IAutoOptions {
 }
 
 class Car extends Auto {
-
-    constructor(basePrice: number,
-        engine: Engine,
-        make: string,
-        model: string,
-        bedLength: string,
-        fourByFour: boolean, year: string) {
-
-        super(basePrice, engine, make, model, year);
+    constructor(autoOptions: IAutoOptions) {
+        super(autoOptions);
     }
 }
 
@@ -116,19 +114,11 @@ class Truck extends Auto {
     bedLength: string;
     fourByFour: boolean;
 
-    constructor(basePrice: number,
-        engine: IEngine,
-        make: string,
-        model: string,
-        year: string,
-        bedLength: string,
-        fourByFour: boolean) {
+    constructor(truckOptions: ITruckOptions) {
 
-        super(basePrice, engine, make, model, year);
+        super(truckOptions);
 
-        this.bedLength = bedLength;
-        this.fourByFour = fourByFour;
-
+        this.bedLength = truckOptions.bedLength;
+        this.fourByFour = truckOptions.fourByFour;
     }
-
 }
