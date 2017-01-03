@@ -6,9 +6,9 @@
 interface IAutoOptions {
     engine: IEngine;
     basePrice: number;
-    make?: string;
-    model?: string;
-    year?: string;
+    make: string;
+    model: string;
+    year: string;
 }
 
 class Engine implements IEngine {
@@ -53,12 +53,14 @@ class Auto implements IAutoOptions {
     make: string;
     model: string;
     accessoryList: string;
+    year: string;
 
-    constructor(basePrice: number, engine: IEngine, make: string, model: string) {
+    constructor(basePrice: number, engine: IEngine, make: string, model: string, year: string) {
         this.basePrice = basePrice;
         this.engine = engine;
         this.make = make;
         this.model = model;
+        this.year = year;
     }
 
     calculateTotal(): number {
@@ -104,9 +106,9 @@ class Car extends Auto {
         make: string,
         model: string,
         bedLength: string,
-        fourByFour: boolean) {
+        fourByFour: boolean, year: string) {
 
-        super(basePrice, engine, make, model);
+        super(basePrice, engine, make, model, year);
     }
 }
 
@@ -118,10 +120,11 @@ class Truck extends Auto {
         engine: IEngine,
         make: string,
         model: string,
+        year: string,
         bedLength: string,
         fourByFour: boolean) {
 
-        super(basePrice, engine, make, model);
+        super(basePrice, engine, make, model, year);
 
         this.bedLength = bedLength;
         this.fourByFour = fourByFour;

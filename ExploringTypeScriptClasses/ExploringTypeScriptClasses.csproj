@@ -41,7 +41,7 @@
     <TypeScriptCompile Include="CalculatorJquery\jquery.d.ts" />
     <TypeScriptCompile Include="Car\greeter.ts" />
     <TypeScriptCompile Include="Calculator\calculator.ts" />
-    <TypeScriptCompile Include="Car\car.ts" />
+    <TypeScriptCompile Include="Car\auto.ts" />
     <TypeScriptCompile Include="Car\onload.ts" />
     <TypeScriptCompile Include="Car\test.ts" />
   </ItemGroup>
