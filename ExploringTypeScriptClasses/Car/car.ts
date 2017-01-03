@@ -1,10 +1,23 @@
-﻿class Engine {
+﻿interface IEngine {
+    start(callback: (startStatus: boolean, engineType: string) => void ) : void;
+    stop(callback: (startStatus: boolean, engineType: string) => void ) : void;
+}
+
+interface IAutoOptions {
+    engine: IEngine;
+    basePrice: number;
+    make?: string;
+    model?: string;
+    year?: string;
+}
+
+class Engine implements IEngine {
     constructor(public horsePower: number, public engineType: string) { }
 
     start(callback: (startStatus: boolean, engineType: string) => void) {
         window.setTimeout(() => {
                 callback(true, this.engineType);
-            }, 1000);
+        }, 1000);
     }
 
     stop(callback: (stopStatus: boolean, engineType: string) => void) {
@@ -14,18 +27,34 @@
     }
 }
 
+class CustomEngine implements IEngine {
+    constructor(public horsePower: number, public engineType: string) { }
+
+    start(callback: (startStatus: boolean, engineType: string) => void) {
+        window.setTimeout(() => {
+            callback(true, this.engineType);
+        }, 1000);
+    }
+
+    stop(callback: (stopStatus: boolean, engineType: string) => void) {
+        window.setTimeout(() => {
+            callback(false, this.engineType);
+        }, 1000);
+    }
+}
+
 class Accessory {
     constructor(public accessoryNumber: number, public title: string) {}
 }
 
-class Auto {
+class Auto implements IAutoOptions {
     private _basePrice: number;
-    private _engine: Engine;
+    private _engine: IEngine;
     make: string;
     model: string;
     accessoryList: string;
     
-    constructor(basePrice: number, engine: Engine, make: string, model: string) {
+    constructor(basePrice: number, engine: IEngine, make: string, model: string) {
         this.basePrice = basePrice;
         this.engine = engine;
         this.make = make;
@@ -58,11 +87,11 @@ class Auto {
         this._basePrice = value;
     }
 
-    get engine(): Engine {
+    get engine(): IEngine {
         return this._engine;
     }
 
-    set engine(value: Engine) {
+    set engine(value: IEngine) {
         if (value === undefined) throw 'Please supply an engine';
         this._engine = value;
     }
