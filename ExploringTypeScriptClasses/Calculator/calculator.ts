@@ -4,11 +4,16 @@
 //https://github.com/Microsoft/TypeScript/issues/2294
 //https://github.com/Microsoft/TypeScript/issues/7091
 
-window.onload = () => {
-    var calc: ICalculator = new NumberTools.Calculator('X', 'Y', 'Output');
-    calc.toast("Calculator is ready to use.");
-}
+namespace BensCalculatorProgram {
+    function main() {
+        window.onload = () => {
+            var calc: ICalculator = new NumberTools.Calculator('X', 'Y', 'Output');
+            calc.toast("Calculator is ready to use.");
+        }
+    };
 
+    main();
+}
 
 export interface ICalculator {
     add(x: number, y: number);
